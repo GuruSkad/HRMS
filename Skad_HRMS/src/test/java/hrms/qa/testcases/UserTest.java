@@ -68,12 +68,12 @@ public class UserTest extends TestBase {
 			String gender,String Mob,String omail,String pmail,String ctry,String stat,String cty,String pcode,String padd,String tadd) {
 		try {
 			homePage.clickOnUserAdministrationPageLink();
-	homePage.clickOnAddUserPageLink();
-	userAdministrationPage = homePage.clickOnUserAdministrationPageLink();
-	userPage = homePage.clickOnAddUserPageLink();
-	userPage.clickAddPeople();
-	userPage.createPersonalDetails(fName, lName, empID,dob,doj,gender,Mob,omail,pmail,ctry,stat,cty,pcode,padd,tadd);
-	Thread.sleep(3000);
+			homePage.clickOnAddUserPageLink();
+			userAdministrationPage = homePage.clickOnUserAdministrationPageLink();
+			userPage = homePage.clickOnAddUserPageLink();
+			userPage.clickAddPeople();
+			userPage.createPersonalDetails(fName, lName, empID,dob,doj,gender,Mob,omail,pmail,ctry,stat,cty,pcode,padd,tadd);
+			Thread.sleep(3000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

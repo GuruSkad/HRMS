@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-10-29T15:32:20 IST" name="Suite" finished-at="2024-10-29T15:32:48 IST" duration-ms="27914">
+  <suite started-at="2024-11-04T10:30:13 IST" name="Suite" finished-at="2024-11-04T10:30:37 IST" duration-ms="23808">
     <groups>
     </groups>
-    <test started-at="2024-10-29T15:32:20 IST" name="Test" finished-at="2024-10-29T15:32:48 IST" duration-ms="27914">
+    <test started-at="2024-11-04T10:30:13 IST" name="Test" finished-at="2024-11-04T10:30:37 IST" duration-ms="23808">
       <class name="hrms.qa.testcases.UserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-10-29T15:32:21 IST" name="setup" finished-at="2024-10-29T15:32:36 IST" duration-ms="14288" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:13 IST" name="setup" finished-at="2024-11-04T10:30:26 IST" duration-ms="12779" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="doLogi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-10-29T15:32:36 IST" name="doLogi" data-provider="getADDUSERTestData" finished-at="2024-10-29T15:32:47 IST" duration-ms="11152" status="PASS">
+        <test-method signature="doLogi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:26 IST" name="doLogi" data-provider="getADDUSERTestData" finished-at="2024-11-04T10:30:36 IST" duration-ms="9964" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -92,7 +92,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLogi -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-10-29T15:32:47 IST" name="tearDown" finished-at="2024-10-29T15:32:48 IST" duration-ms="1214" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:36 IST" name="tearDown" finished-at="2024-11-04T10:30:37 IST" duration-ms="442" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

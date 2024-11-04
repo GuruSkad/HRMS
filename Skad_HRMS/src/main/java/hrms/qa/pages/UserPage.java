@@ -1,11 +1,13 @@
 package hrms.qa.pages;
 
 
+import java.security.Key;
 import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -43,9 +45,14 @@ public class UserPage extends TestBase {
 	   @FindBy (id = "date_of_joining")
 	   private WebElement dateOfJoining;
 	   
+//	   @FindBy(id ="select2-data-19-dfcv")
+//	   private WebElement gend;
+	   
+	 @FindBy(css   ="body > div:nth-child(47) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(8) > div:nth-child(1) > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(1)")
+	   private WebElement selectGender;
 	 
-	   private WebElement selectGender	=  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@role='combobox'])[1]")));;
-	   private WebElement selectG	=  wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("(//span[@role='combobox'])[1]")));;
+@FindBy(css = "#select2-gender-mp-container")
+private WebElement gend;
 	   @FindBy(id = "mobile")
 	   private WebElement mobileNo;
 	   
@@ -55,7 +62,7 @@ public class UserPage extends TestBase {
 	    @FindBy(id = "personal_email")
 	    private WebElement personalEmail;
 	    
-	    @FindBy(id = "select2-country_id-container")
+	    @FindBy(css = "body > div:nth-child(47) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(12) > div:nth-child(1) > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(1)")
 	    private WebElement country;
 	    
 	    @FindBy(id = "//span[@id='select2-state_id-container']")
@@ -202,16 +209,7 @@ public class UserPage extends TestBase {
 		 return getven.getAllSelectedOptions();
 		
 	 }
-//	 public List<WebElement> getBillingType() {
-//		 Select getBill=new Select(billingType);
-//		 return getBill.getAllSelectedOptions();
-//		
-//	 }
-//	 public List<WebElement> getBillingType() {
-//		 Select getBill=new Select(billingType);
-//		 return getBill.getAllSelectedOptions();
-		
-//	 }
+
 	  public void createPersonalDetails(String fName, String lName, String empID,String dob,String doj,
 										String gender,String Mob,String omail,String pmail,String ctry,
 										String stat,String cty,String pcode,String padd,String tadd) {
@@ -227,11 +225,14 @@ public class UserPage extends TestBase {
 			  JavascriptExecutor j=(JavascriptExecutor)driver;
 			  j.executeScript("arguments[0].setAttribute('value','"+doj+"');", dateOfJoining);
 			  
-			  JavascriptExecutor dropdown = (JavascriptExecutor) driver;
-			  WebElement dropdown1= driver.findElement(By.xpath("//select[@name='gender']"));
-			  dropdown.executeScript("arguments[0].click();", dropdown1);
+//			  gend.click();
 			  
-			  
+			  selectGender.click();
+			  selectGender.sendKeys(gender);
+			  selectGender.sendKeys(Keys.ENTER);
+			  Thread.sleep(3000);
+//			  Select s=new Select(gend);
+//			  s.selectByVisibleText(gender);
 			  mobileNo.sendKeys(Mob);
 			  officialEmail.sendKeys(omail);
 			  personalEmail.sendKeys(pmail);
