@@ -17,10 +17,12 @@ import hrms.qa.base.TestBase;
 
 public class TestUtil  extends TestBase{
 	
+	public static final long WAIT_TIMEOUT = 30;
 	public static long PAGE_LOAD_TIMEOUT = 20;
 	public static long IMPLICIT_WAIT = 20;
 	public static String TESTDATA_SHEET_PATH = "C:/Users/ArunKumar/eclipse-workspace"
 			+ "/HRMS/Skad_HRMS/src/main/java/hrms/qa/TestData/TestData.xlsx";
+			
 	static Sheet sheet;
 	static Workbook book;
 	

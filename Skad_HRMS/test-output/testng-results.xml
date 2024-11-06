@@ -1,98 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-04T10:30:13 IST" name="Suite" finished-at="2024-11-04T10:30:37 IST" duration-ms="23808">
+  <suite started-at="2024-11-05T17:30:50 IST" name="Suite" finished-at="2024-11-05T17:31:42 IST" duration-ms="52414">
     <groups>
     </groups>
-    <test started-at="2024-11-04T10:30:13 IST" name="Test" finished-at="2024-11-04T10:30:37 IST" duration-ms="23808">
+    <test started-at="2024-11-05T17:30:50 IST" name="Test" finished-at="2024-11-05T17:31:42 IST" duration-ms="52414">
       <class name="hrms.qa.testcases.UserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:13 IST" name="setup" finished-at="2024-11-04T10:30:26 IST" duration-ms="12779" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="doLogi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:26 IST" name="doLogi" data-provider="getADDUSERTestData" finished-at="2024-11-04T10:30:36 IST" duration-ms="9964" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Arun]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Kumar]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[929839skad]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[22-10-1994]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[21-10-2024]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Male]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[4.362436436E9]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[AK@gmail.com]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[ka@gmial.com]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[India]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Tamil Nadu]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Thanjavur]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[614625.0]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[xcxfgsggwegfresg]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[skdafjhbdsjdskahfliua]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="doLogi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:30:50 IST" name="doLogi" data-provider="getADDUSERTestData" finished-at="2024-11-05T17:30:50 IST" duration-ms="0" status="FAIL">
+          <exception class="org.testng.TestNGException">
+            <message>
+              <![CDATA[
+Data Provider public java.lang.Object[][] hrms.qa.testcases.UserTest.getADDUSERTestData() returned a null value]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.testng.TestNGException: 
+Data Provider public java.lang.Object[][] hrms.qa.testcases.UserTest.getADDUSERTestData() returned a null value
+at org.testng.internal.invokers.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:161)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:809)
+at org.testng.internal.Parameters.handleParameters(Parameters.java:734)
+at org.testng.internal.invokers.ParameterHandler.handleParameters(ParameterHandler.java:72)
+at org.testng.internal.invokers.ParameterHandler.createParameters(ParameterHandler.java:51)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:946)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.testng.TestNGException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- doLogi -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@1ce24091]" started-at="2024-11-04T10:30:36 IST" name="tearDown" finished-at="2024-11-04T10:30:37 IST" duration-ms="442" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:30:50 IST" name="setup" finished-at="2024-11-05T17:31:05 IST" duration-ms="14387" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="getAllOption()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:31:05 IST" name="getAllOption" finished-at="2024-11-05T17:31:26 IST" duration-ms="21463" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"css selector","selector":"#select2\-data\-19\-q504"}
+  (Session info: chrome=130.0.6723.92)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [61b02650bb6a48b4a5497d8926ad2c34, findElement {using=id, value=select2-data-19-q504}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\ARUNKU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58679/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 61b02650bb6a48b4a5497d8926ad2c34]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"#select2\-data\-19\-q504"}
+  (Session info: chrome=130.0.6723.92)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [61b02650bb6a48b4a5497d8926ad2c34, findElement {using=id, value=select2-data-19-q504}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.92, chrome: {chromedriverVersion: 130.0.6723.91 (53ac07678369..., userDataDir: C:\Users\ARUNKU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58679}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58679/devtoo..., se:cdpVersion: 130.0.6723.92, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 61b02650bb6a48b4a5497d8926ad2c34
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
+at hrms.qa.pages.UserPage.getGender(UserPage.java:162)
+at hrms.qa.pages.UserPage.getAllDropdownOptions(UserPage.java:225)
+at hrms.qa.testcases.UserTest.getAllOption(UserTest.java:100)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getAllOption -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:31:26 IST" name="tearDown" finished-at="2024-11-05T17:31:26 IST" duration-ms="236" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:31:26 IST" name="setup" finished-at="2024-11-05T17:31:39 IST" duration-ms="12883" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="withOutValues()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:31:39 IST" name="withOutValues" finished-at="2024-11-05T17:31:41 IST" duration-ms="2342" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- withOutValues -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@6200f9cb]" started-at="2024-11-05T17:31:41 IST" name="tearDown" finished-at="2024-11-05T17:31:42 IST" duration-ms="501" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

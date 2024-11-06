@@ -65,14 +65,15 @@ public class UserTest extends TestBase {
 	
 	@Test(dataProvider = "getADDUSERTestData")
 	public void  doLogi(String fName, String lName, String empID,String dob,String doj,
-			String gender,String Mob,String omail,String pmail,String ctry,String stat,String cty,String pcode,String padd,String tadd) {
+			String gender,String Mob,String omail,String pmail,String ctry,String stat,String cty,String pcode,
+			String padd,String tadd,String jbtitle,String dptmt,String subDept,
+			  String emptype,String empthrogh,String woMode,String woLocation,
+			  String vendor,String billType,String timeZone) {
 		try {
-			homePage.clickOnUserAdministrationPageLink();
-			homePage.clickOnAddUserPageLink();
-			userAdministrationPage = homePage.clickOnUserAdministrationPageLink();
-			userPage = homePage.clickOnAddUserPageLink();
+		
 			userPage.clickAddPeople();
-			userPage.createPersonalDetails(fName, lName, empID,dob,doj,gender,Mob,omail,pmail,ctry,stat,cty,pcode,padd,tadd);
+			userPage.createPersonalDetails(fName, lName, empID,dob,doj,gender,Mob,omail,pmail,ctry,stat,cty,pcode,padd,tadd,
+					jbtitle,dptmt,subDept,emptype,empthrogh,woMode,woLocation,vendor,billType,timeZone);
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -80,7 +81,28 @@ public class UserTest extends TestBase {
 		}
 	}
 
+@Test
+public void withOutValues() {
+	try {
+		userPage.clickAddPeople();		
+		userPage.withoutValuesValidation();	
+		System.out.println("without values completed");
+		
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+}
 
+@Test
+public void getAllOption() {
+userPage.clickAddPeople();
+	List<WebElement> allDropdownOptions = userPage.getAllDropdownOptions();
+	for (WebElement option : allDropdownOptions) {
+	    System.out.println(option.getText()); // Print the text of each dropdown option
+	}
+	
+}
 	@AfterMethod
 	public void tearDown() {
 		// Close the browser after each test execution

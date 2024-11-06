@@ -51,7 +51,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//span[normalize-space()='Log Monitoring']")
 	public WebElement logMonitoringPageLink;
 	
-	@FindBy(xpath = "//a[normalize-space()='User']")
+	@FindBy(linkText  = "User")
 	public WebElement addUserPageLink;
 	
 	
@@ -108,7 +108,8 @@ public class HomePage extends TestBase {
 	}
 	
 	public UserAdministrationPage clickOnUserAdministrationPageLink() {
-		userAdministrationPageLink.click();
+//		userAdministrationPageLink.click();
+		clickWithFluentWait(userAdministrationPageLink);
 		return new UserAdministrationPage();
 	}
 	
@@ -124,7 +125,9 @@ public class HomePage extends TestBase {
 	}
 	
 	public UserPage clickOnAddUserPageLink() {
-		addUserPageLink.click();
+//		addUserPageLink.click();
+		clickWithFluentWait(addUserPageLink);
+		
 		return new  UserPage();
 	}
 	

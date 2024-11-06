@@ -3,6 +3,7 @@ package hrms.qa.pages;
 
 import java.security.Key;
 import java.time.Duration;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -20,7 +21,7 @@ import hrms.qa.base.TestBase;
 public class UserPage extends TestBase {
 	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 //	locators for addPeople
-	@FindBy(xpath = "//a[@class='col-auto fs-12 font-weight-600 btn-primary mb-2 mb-sm-2 mb-md-2 mb-lg-2 ms-0']")
+	@FindBy(css = ".col-auto.fs-12.font-weight-600.btn-primary.mb-2.mb-sm-2.mb-md-2.mb-lg-2.ms-0")
 	private WebElement addPeople;
 	
 	
@@ -48,7 +49,7 @@ public class UserPage extends TestBase {
 //	   @FindBy(id ="select2-data-19-dfcv")
 //	   private WebElement gend;
 	   
-	 @FindBy(css   ="body > div:nth-child(47) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(8) > div:nth-child(1) > div:nth-child(2) > span:nth-child(2) > span:nth-child(1) > span:nth-child(1)")
+	 @FindBy(id   ="select2-data-19-q504")
 	   private WebElement selectGender;
 	 
 @FindBy(css = "#select2-gender-mp-container")
@@ -124,7 +125,11 @@ private WebElement gend;
 	    
 	    
 //locators for back and submit button
+	    @FindBy(xpath = "/html/body/div[2]/div/div/div/div[2]/form/div/div[38]/div/button")
+	    private WebElement submitButton;
 	    
+	    @FindBy(css = "a[name='submit']")
+	    private WebElement backButton;
 	 
 	public UserPage() {
 		PageFactory.initElements(driver, this);
@@ -149,11 +154,15 @@ private WebElement gend;
 	  }
 	  
 	  public void clickAddPeople() {
-		  addPeople.click();
+//		  addPeople.click();
+		  clickWithFluentWait(addPeople);
 	  }
 	  
 	  public List<WebElement> getGender() {
-		 Select getGender=new Select(selectGender);
+		  selectGender.click();
+		 WebElement s= driver.findElement(By.id("select2-data-21-w9uo"));
+		 Select getGender=new Select(s);
+		 
 	List<WebElement>genderList=	 getGender.getAllSelectedOptions();
 	return genderList;
 	  }
@@ -199,7 +208,7 @@ private WebElement gend;
 		 return wmode.getAllSelectedOptions();
 		
 	 }
-	 public List<WebElement> getWorkLocaiton() {
+	 public List<WebElement> getWorkLocation() {
 		 Select getwlc=new Select(workolocation);
 		 return getwlc.getAllSelectedOptions();
 		
@@ -209,10 +218,29 @@ private WebElement gend;
 		 return getven.getAllSelectedOptions();
 		
 	 }
+	 public List<WebElement> getAllDropdownOptions() {
+	        List<WebElement> allOptions = new ArrayList<>();
 
+	        // Collect options from each dropdown
+	        allOptions.addAll(getGender());
+	        allOptions.addAll(getCountry());
+	        allOptions.addAll(getState());
+	        allOptions.addAll(getCities());
+	        allOptions.addAll(getDepartment());
+	        allOptions.addAll(getEmploymentType());
+	        allOptions.addAll(getEmployedThrough());
+	        allOptions.addAll(getWorkMode());
+	        allOptions.addAll(getWorkLocation());
+	        allOptions.addAll(getVendorName());
+
+	        return allOptions; // Return the list containing all dropdown options
+	    }
+	
 	  public void createPersonalDetails(String fName, String lName, String empID,String dob,String doj,
 										String gender,String Mob,String omail,String pmail,String ctry,
-										String stat,String cty,String pcode,String padd,String tadd) {
+										String stat,String cty,String pcode,String padd,String tadd,String jbtitle,String dptmt,String subDept,
+										  String emptype,String empthrogh,String woMode,String woLocation,
+										  String vendor,String billType,String timeZone) {
 		  try {
 			firstName.sendKeys(fName);
 			  lastName.sendKeys(lName);
@@ -245,43 +273,36 @@ private WebElement gend;
 			  pinCode.sendKeys(pcode);
 			  permanentAdress.sendKeys(padd);
 			  temporaryAddress.sendKeys(tadd);
+			  jobTitle.sendKeys(jbtitle);
+				Select dpt=new Select(  department);
+				dpt.selectByVisibleText(dptmt);
+				Select sbdpt=new Select(sbDepartment);
+				sbdpt.selectByVisibleText(subDept);
+				Select emptpe=new Select(empType);
+				emptpe.selectByVisibleText(emptype);
+				Select emthr=new Select(employedThrough);
+				emthr.selectByVisibleText(empthrogh);
+				Select wmod=new Select(workMode);
+				wmod.selectByVisibleText(woMode);
+				Select vend=new Select(vendorName);
+				vend.selectByVisibleText(vendor);
+				Select bill=new Select(billingType);
+				bill.selectByVisibleText(billType);
+				Select tmz=new Select(userTimeZone);
+				tmz.selectByVisibleText(timeZone);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		  
 		  
 
 	}
-	  public void enterOrganizationDetails(String jbtitle,String dptmt,String subDept,
-			  String emptype,String empthrogh,String woMode,String woLocation,
-			  String vendor,String billType,String timeZone) {
-		  
-		  jobTitle.sendKeys(jbtitle);
-		Select dpt=new Select(  department);
-		dpt.selectByVisibleText(dptmt);
-		Select sbdpt=new Select(sbDepartment);
-		sbdpt.selectByVisibleText(subDept);
-		Select emptpe=new Select(empType);
-		emptpe.selectByVisibleText(emptype);
-		Select emthr=new Select(employedThrough);
-		emthr.selectByVisibleText(empthrogh);
-		Select wmod=new Select(workMode);
-		wmod.selectByVisibleText(woMode);
-		Select vend=new Select(vendorName);
-		vend.selectByVisibleText(vendor);
-		Select bill=new Select(billingType);
-		bill.selectByVisibleText(billType);
-		Select tmz=new Select(userTimeZone);
-		tmz.selectByVisibleText(timeZone);
-		  
-		  
+	  public void withoutValuesValidation() {
+           clickWithFluentWait(submitButton);
 	  }
 	  
-	  public void enterprojectRoles(String  rle,String rprtTo ) {
-		  
-		  
-	  }
+	  
+	
 
 
 }
