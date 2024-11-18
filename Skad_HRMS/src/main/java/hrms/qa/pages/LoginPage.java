@@ -90,7 +90,7 @@ public class LoginPage extends TestBase {
 	public HomePage login(String un,String pwd) {
 		userName.sendKeys(un);
 		password.sendKeys(pwd);
-		loginButton.click();
+		clickWithFluentWait(loginButton);
 		return new HomePage();
 		
 	}
@@ -121,6 +121,7 @@ public class LoginPage extends TestBase {
     }
 	
 	public boolean emptyemailalertmsg(String pwd) {
+		
 		withoutEmail(pwd);
 		loginButton.click();
 		return emptyemailalert.isDisplayed();

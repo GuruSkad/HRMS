@@ -1,5 +1,8 @@
 package hrms.qa.pages;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -24,10 +27,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//span[normalize-space()='Task Oversight']" )
 	public WebElement timeSheetPageLink;
 	
-	@FindBy(xpath = "//span[normalize-space()='Task Oversight']")
-	public WebElement taskOverSightLink;
-	
-	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/tasks']")
+	@FindBy(xpath    = "//span[normalize-space()='Task Oversight']")
 	public WebElement taskOverSightPageLink;
 	
 	@FindBy(xpath = "//span[normalize-space()='Departments']")
@@ -54,7 +54,13 @@ public class HomePage extends TestBase {
 	@FindBy(linkText  = "User")
 	public WebElement addUserPageLink;
 	
+	@FindBy(id = "add_role")
+	public WebElement adddRolePageLink;
 	
+    @FindBy(tagName = "a")
+    private List<WebElement> allLinksbrokenLink;
+	
+    
 	public HomePage() {
 		PageFactory.initElements(driver, this);
 	}
@@ -76,38 +82,42 @@ public class HomePage extends TestBase {
 		return new TimeSheetPage();
 	}
 	
-	public ProjectAdministrationPage clickOnProjectAdministrationPgageLink() {
-		projectAdministrationLink.click();
+	public ProjectAdministrationPage clickOnProjectAdministrationPageLink() {
+//		projectAdministrationLink.click();
+		clickWithFluentWait(projectAdministrationLink);
 		return new ProjectAdministrationPage();
 	}
 
-	public TimeSheetPage clickOnTaskOverSightPageLink() {
-		taskOverSightPageLink.click();
+	public TaskOverSightPage clickOnTaskOverSightPageLink() {
+		clickWithFluentWait(taskOverSightPageLink);
+	
+//		return new TaskOverSightPage();
 		return new TaskOverSightPage();
 	}
 
-	public TimeSheetPage clickOnDepartmentsLink() {
-		departmentsPageLink.click();
+	public DepartmentsPage clickOnDepartmentsLink() {
+	clickWithFluentWait(departmentsPageLink);
 		return new DepartmentsPage();
 	}
 	
-	public TimeSheetPage clickOnClientRelationsLink() {
+	public ClientRelationsPage clickOnClientRelationsLink() {
 		clientRelationsPageLink.click();
 		return new ClientRelationsPage();
 	}
 	
-	public TimeSheetPage clickOnVendorAdministrationLink() {
+	public VendorAdministrationPage clickOnVendorAdministrationLink() {
 		vendorAdministrationPageLink.click();
 		return new VendorAdministrationPage();
 	}
 	
 
-	public TimeSheetPage clickOnLeaveTrackingPageLink() {
+	public LeaveTrackingPage clickOnLeaveTrackingPageLink() {
 		leaveTrackingPageLink.click();
 		return new LeaveTrackingPage();
 	}
 	
 	public UserAdministrationPage clickOnUserAdministrationPageLink() {
+		
 //		userAdministrationPageLink.click();
 		clickWithFluentWait(userAdministrationPageLink);
 		return new UserAdministrationPage();
@@ -130,7 +140,30 @@ public class HomePage extends TestBase {
 		
 		return new  UserPage();
 	}
+	public RolePage clickOnRolePageLink() {
+		adddRolePageLink.click();
+		return new RolePage();
+	}
 	
+	 public List<String> findBrokenLink() {
+	        List<String> urls = new ArrayList<>();
+
+	        try {
+				for (WebElement ele : allLinksbrokenLink) {
+				    String urlLink = ele.getAttribute("href");
+				    if (urlLink != null && !urlLink.isEmpty()) {
+				        urls.add(urlLink);
+				    }
+				}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	        return urls;
+	    }
+
+
+
 	
 	
 }

@@ -3,14 +3,13 @@
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="hrms.qa.testcases.UserTest">
+      <class name="hrms.qa.testcases.DepartmentTest">
         <methods>
-          <include name="doLogi"/>
           <include name="tearDown"/>
-          <include name="getAllOption"/>
           <include name="setup"/>
+          <include name="addSubDepartment"/>
         </methods>
-      </class> <!-- hrms.qa.testcases.UserTest -->
+      </class> <!-- hrms.qa.testcases.DepartmentTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
