@@ -4,11 +4,14 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<!-- <class name="hrms.qa.testcases.LoginTest"/>-->
-
-			<!-- <class name="hrms.qa.testcases.UserTest"/> -->
+			<!--		 --><class name="hrms.qa.testcases.HomeTest" />
+			<!-- --><class name="hrms.qa.testcases.UserTest" /> 
+			<!-- <class name="hrms.qa.testcases.ProjectAdministrationTest" />-->
 
 			<!--<class name="hrms.qa.testcases.TaskOverSightTest"/> -->
-			<class name="hrms.qa.testcases.DepartmentTest" />
+			<!--<class name="hrms.qa.testcases.DepartmentTest" /> -->
+			<!--<class name="hrms.qa.testcases.ClientRelationsTest" /> -->
+			<!--<class name="hrms.qa.testcases.VendorAdministrationTest" /> -->
 
 		</classes>
 	</test> <!--

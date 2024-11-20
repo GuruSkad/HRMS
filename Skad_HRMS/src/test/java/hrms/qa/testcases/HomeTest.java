@@ -33,7 +33,7 @@ public class HomeTest extends TestBase {
 	@Test
 	public void testBrokenLinks() {
 		// Find all URLs on the page
-
+		homePage = loginPage.login(username, password);
 		
 		
 		List<String> urls = homePage.findBrokenLink();

@@ -13,7 +13,7 @@ public class HomePage extends TestBase {
 	
 	
 //locators for AllPageLinks
-	
+
 	
 	@FindBy(xpath = "(//span[normalize-space()='Dashboard'])[1]")
 	public WebElement dashBoardLink;
@@ -33,11 +33,12 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//span[normalize-space()='Departments']")
 	public WebElement departmentsPageLink;
 	
-	@FindBy(xpath = "//span[normalize-space()='Client Relations']")
+	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/client/list']")
 	public WebElement clientRelationsPageLink;
 	
-	@FindBy(xpath = "//span[normalize-space()='Vendor Administration']")
+	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/vendor/list' and contains(@class, 'menu-link')]")
 	public WebElement vendorAdministrationPageLink;
+
 	
 	@FindBy(xpath = "//span[normalize-space()='Leave Tracking']")
 	public WebElement leaveTrackingPageLink;
@@ -101,12 +102,16 @@ public class HomePage extends TestBase {
 	}
 	
 	public ClientRelationsPage clickOnClientRelationsLink() {
-		clientRelationsPageLink.click();
+//		waitForElementToBeClickable(clientRelationsPageLink);
+//		clientRelationsPageLink.click();
+		clickWithFluentWait(clientRelationsPageLink);
 		return new ClientRelationsPage();
 	}
 	
 	public VendorAdministrationPage clickOnVendorAdministrationLink() {
-		vendorAdministrationPageLink.click();
+//		waitForElementToBeClickable(vendorAdministrationPageLink);
+//		vendorAdministrationPageLink.click();
+		clickWithFluentWait(vendorAdministrationPageLink);
 		return new VendorAdministrationPage();
 	}
 	

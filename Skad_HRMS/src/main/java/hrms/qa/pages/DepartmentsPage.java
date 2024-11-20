@@ -32,17 +32,20 @@ public class DepartmentsPage extends TestBase {
 	@FindBy(xpath = "//a[normalize-space()='Sub Department']")
 	private WebElement addSub;
 
-	@FindBy(xpath = "//button[@data-bs-toggle='modal']")
+	@FindBy(css = ".col-auto.fs-12.font-weight-500.btn-primary.ms-0.mb-2.mb-sm-2.mb-md-2.mb-lg-2.button-radius.Add-new-sub-dept")
 	private WebElement addsubdepartmentbtn;
 	
 	@FindBy(id = "department_id")
 	private WebElement deptID;
 	
-	@FindBy(css="//form[@id='add-subdepartment-form']//input[@placeholder='Enter Sub Department Name']")
+	@FindBy(css="form[id='add-subdepartment-form'] input[placeholder='Enter Sub Department Name']")
 	private WebElement enterDeptName;
 	
-	 @FindBy(xpath = "/html[1]/body[1]/div[2]/div[1]/div[1]/div[1]/div[1]/div[1]/div[1]/div[2]/div[1]/div[1]/button[1]")
+	 @FindBy(xpath = "//form[@id='add-subdepartment-form']//input[@placeholder='Enter Sub Department Code']")
 	 private WebElement enterSubDeptCode;
+	 
+	 @FindBy(css="form[id='add-subdepartment-form'] button[name='submit']")
+	 private WebElement subDeptSubmitButton;
 	 
 	public DepartmentsPage() {
 		PageFactory.initElements(driver, this);
@@ -69,13 +72,31 @@ public class DepartmentsPage extends TestBase {
 		submit.click();
 	}
 
-	public void addSubDept() throws InterruptedException {
+	public void addSubDept()  {
+		
 		waitForElementToBeClickable(addSub);
 
 		addSub.click();
 		waitForElementToBeClickable(addsubdepartmentbtn);
 		addsubdepartmentbtn.click();
-		Thread.sleep(3000);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		String s="Qa Engineer";
+		selectDropdownByVisibleText(deptID, s);
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		enterDeptName.sendKeys("Testing with automation");
+		enterSubDeptCode.sendKeys("12345");
+		subDeptSubmitButton.click();
 
+		
 	}
 }

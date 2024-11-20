@@ -69,12 +69,12 @@ public class UserTest extends TestBase {
 			String gender,String Mob,String omail,String pmail,String ctry,String stat,String cty,String pcode,
 			String padd,String tadd,String jbtitle,String dptmt,String subDept,
 			  String emptype,String empthrogh,String woMode,String woLocation,
-			  String vendor,String billType,String timeZone,String rle,String reportTO) {
+			  String vendor,String billType,String timeZone) {
 		try {
 		
 			userPage.clickAddPeople();
 			userPage.createPersonalDetails(fName, lName, empID,dob,doj,gender,Mob,omail,pmail,ctry,stat,cty,pcode,padd,tadd,
-					jbtitle,dptmt,subDept,emptype,empthrogh,woMode,woLocation,vendor,billType,timeZone,rle,reportTO);
+					jbtitle,dptmt,subDept,emptype,empthrogh,woMode,woLocation,vendor,billType,timeZone);
 			Thread.sleep(3000);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block

@@ -30,7 +30,7 @@ public class UserPage extends TestBase {
 	private WebElement uploadNewImage;
 
 	@FindBy(id = "employee_name")
-	private WebElement firstName;
+	public  WebElement firstName;
 
 	@FindBy(id = "last_name")
 	private WebElement lastName;
@@ -62,7 +62,7 @@ public class UserPage extends TestBase {
 	private WebElement personalEmail;
 
 	@FindBy(id = "country_id")
-	private WebElement country;
+	public WebElement country;
 
 	@FindBy(id = "state_id")
 	private WebElement state;
@@ -239,7 +239,7 @@ public class UserPage extends TestBase {
 	public void createPersonalDetails(String fName, String lName, String empID, String dob, String doj, String gender,
 			String Mob, String omail, String pmail, String ctry, String stat, String cty, String pcode, String padd,
 			String tadd, String jbtitle, String dptmt, String subDept, String emptype, String empthrogh, String woMode,
-			String woLocation, String vendor, String billType, String timeZone,String rle,String reportTO) {
+			String woLocation, String vendor, String billType, String timeZone) {
 		try {
 			firstName.sendKeys(fName);
 		
@@ -286,20 +286,30 @@ public class UserPage extends TestBase {
 			
 //			Select emptpe = new Select(empType);
 //			emptpe.selectByVisibleText(emptype);
-			selectDropdownByVisibleText(addPeople, rle);
-			Select emthr = new Select(employedThrough);
-			emthr.selectByVisibleText(empthrogh);
-			Select wmod = new Select(workMode);
-			wmod.selectByVisibleText(woMode);
-			Select vend = new Select(vendorName);
-			vend.selectByVisibleText(vendor);
-			Select bill = new Select(billingType);
-			bill.selectByVisibleText(billType);
-			Select tmz = new Select(userTimeZone);
-			tmz.selectByVisibleText(timeZone);
+			selectDropdownByVisibleText(empType, emptype);
+
+//			Select emthr = new Select(employedThrough);
+//			emthr.selectByVisibleText(empthrogh);
+			selectDropdownByVisibleText(employedThrough, empthrogh);
+			
+//			Select wmod = new Select(workMode);
+//			wmod.selectByVisibleText(woMode);
+			selectDropdownByVisibleText(workMode, woMode);
+			
+			selectDropdownByVisibleText(workolocation, woLocation);
+			
+//			Select vend = new Select(vendorName);
+//			vend.selectByVisibleText(vendor);
+			selectDropdownByVisibleText(vendorName, vendor);
+//			Select bill = new Select(billingType);
+//			bill.selectByVisibleText(billType);
+			selectDropdownByVisibleText(billingType, billType);
+//			Select tmz = new Select(userTimeZone);
+//			tmz.selectByVisibleText(timeZone);
+			selectDropdownByVisibleText(userTimeZone, timeZone);
 			Thread.sleep(4000);
-			selectDropdownByVisibleText(role, rle);
-			selectDropdownByVisibleText(reportingTo, reportTO);
+//			selectDropdownByVisibleText(role, rle);
+//			selectDropdownByVisibleText(reportingTo, reportTO);
 			submitButton.click();
 		} catch (Exception e) {
 			e.printStackTrace();

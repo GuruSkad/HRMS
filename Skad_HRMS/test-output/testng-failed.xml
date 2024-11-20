@@ -3,14 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="hrms.qa.testcases.DepartmentTest">
+      <class name="hrms.qa.testcases.VendorAdministrationTest">
         <methods>
-          <include name="tearDown"/>
           <include name="setup"/>
-          <include name="deleteFunctionality"/>
-          <include name="addSubDepartment"/>
+          <include name="tearDown"/>
+          <include name="validation" invocation-numbers="0"/>
         </methods>
-      </class> <!-- hrms.qa.testcases.DepartmentTest -->
+      </class> <!-- hrms.qa.testcases.VendorAdministrationTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

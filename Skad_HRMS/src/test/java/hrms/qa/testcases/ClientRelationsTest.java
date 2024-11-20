@@ -1,24 +1,24 @@
 package hrms.qa.testcases;
 
-import org.openqa.selenium.devtools.idealized.target.model.SessionID;
+import java.util.List;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import hrms.qa.base.TestBase;
-import hrms.qa.pages.DepartmentsPage;
+import hrms.qa.pages.ClientRelationsPage;
 import hrms.qa.pages.HomePage;
 import hrms.qa.pages.LoginPage;
 
-public class DepartmentTest extends TestBase {
-
+public class ClientRelationsTest extends TestBase {
 	LoginPage loginPage;
 	HomePage homePage;
-	DepartmentsPage departmentPage;
+	ClientRelationsPage clientRelationsPage;
 	String username = prop.getProperty("username");
 	String password = prop.getProperty("password");
 
-	public DepartmentTest() {
+	public ClientRelationsTest() {
 		super();
 	}
 
@@ -27,10 +27,8 @@ public class DepartmentTest extends TestBase {
 		try {
 			initialization();
 			loginPage = new LoginPage();
-			
 			homePage = loginPage.login(username, password);
-			departmentPage = homePage.clickOnDepartmentsLink();
-			
+			clientRelationsPage = homePage.clickOnClientRelationsLink();
 
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -38,29 +36,26 @@ public class DepartmentTest extends TestBase {
 		}
 	}
 
-//	@Test
-//	public void deleteFunctionality() throws InterruptedException {
-//		departmentPage = homePage.clickOnDepartmentsLink();
-//		departmentPage.deleteDept();
-//	}
-
 	@Test
-	public void addDepartment() throws InterruptedException {
-		departmentPage.addept();
-		Thread.sleep(3000);
-
+	public void addclient() {
+		List<String> msg = clientRelationsPage.checkAlreadyExists();
+		for (String messages : msg) {
+			System.out.println(messages);
+		}
 	}
 
 	@Test
-	public void addSubDepartment() throws InterruptedException {
-	
-		departmentPage.addSubDept();
-		
+	public void errorMsgValidation() {
+		List<String> msg = clientRelationsPage.errorMsg();
+		for (String messages : msg) {
+			System.out.println(messages);
+		}
 	}
 
 	@AfterMethod
 	public void tearDown() {
+		// Close the browser after each test execution
 		driver.quit();
+		System.out.println("Browser closed successfully.");
 	}
-
 }

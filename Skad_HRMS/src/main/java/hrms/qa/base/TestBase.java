@@ -29,8 +29,9 @@ import hrms.qa.util.TestUtil;
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
-	public static WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.WAIT_TIMEOUT));
-//    wait = 
+	 public static WebDriverWait wait; 
+
+
 
 	// Constructor to load the properties file
 
@@ -69,6 +70,7 @@ public class TestBase {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
+		wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.WAIT_TIMEOUT));
 
 		// Navigate to the specified URL
 		driver.get(prop.getProperty("url"));
