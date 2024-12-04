@@ -36,7 +36,7 @@ public class DepartmentsPage extends TestBase {
 	private WebElement addsubdepartmentbtn;
 	
 	@FindBy(id = "department_id")
-	private WebElement deptID;
+	public  WebElement deptID;
 	
 	@FindBy(css="form[id='add-subdepartment-form'] input[placeholder='Enter Sub Department Name']")
 	private WebElement enterDeptName;

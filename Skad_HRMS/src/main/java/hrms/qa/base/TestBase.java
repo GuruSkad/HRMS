@@ -1,8 +1,13 @@
 package hrms.qa.base;
 
+import java.awt.AWTException;
+import java.awt.Robot;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.lang.reflect.Method;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -19,19 +24,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestResult;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
+import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.markuputils.ExtentColor;
+import com.aventstack.extentreports.markuputils.MarkupHelper;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import hrms.qa.util.TestUtil;
 
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop;
-	 public static WebDriverWait wait; 
-
-
+	public static WebDriverWait wait;
+	public static Robot robot;
+	public static Actions action;
+	public static ExtentSparkReporter sparkReporter;
+	public static ExtentTest logger;
+	public static ExtentReports extent;
+	public static Method method;
 
 	// Constructor to load the properties file
 
@@ -57,30 +76,31 @@ public class TestBase {
 
 	// Method to initialize the WebDriver
 	public static void initialization() {
-		String browserName = prop.getProperty("browser");
 
-		if (browserName.equals("chrome")) {
-			driver = new ChromeDriver();
-		} else if (browserName.equals("FF")) {
-			driver = new FirefoxDriver();
+		try {
+			String browserName = prop.getProperty("browser");
+
+			if (browserName.equals("chrome")) {
+				driver = new ChromeDriver();
+			} else if (browserName.equals("FF")) {
+				driver = new FirefoxDriver();
+			}
+
+			// Maximize the window and configure timeouts
+			driver.manage().window().maximize();
+			driver.manage().deleteAllCookies();
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
+			driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
+			wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.WAIT_TIMEOUT));
+			robot = new Robot();
+			action = new Actions(driver);
+
+			// Navigate to the specified URL
+			driver.get(prop.getProperty("url"));
+		} catch (AWTException e) {
+
+			e.getMessage();
 		}
-
-		// Maximize the window and configure timeouts
-		driver.manage().window().maximize();
-		
-		
-		
-		
-		
-		
-		
-		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(TestUtil.IMPLICIT_WAIT));
-		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(TestUtil.PAGE_LOAD_TIMEOUT));
-		wait = new WebDriverWait(driver, Duration.ofSeconds(TestUtil.WAIT_TIMEOUT));
-
-		// Navigate to the specified URL
-		driver.get(prop.getProperty("url"));
 	}
 
 	public static void waitForElementToBeClickable(WebElement locator) {
@@ -167,5 +187,47 @@ public class TestBase {
 	public void selectDropdownByValue(WebElement dropdownElement, String value) {
 		Select dropdown = new Select(dropdownElement);
 		dropdown.selectByValue(value);
+	}
+
+	public static void selectDropdownOptionUsingKeys(WebElement dropdownElement, int downPressCount) {
+		try {
+			// Click to open the dropdown
+			dropdownElement.click();
+
+			// Press Down Arrow key the specified number of times
+			for (int i = 0; i < downPressCount; i++) {
+				robot.keyPress(KeyEvent.VK_DOWN);
+				robot.keyRelease(KeyEvent.VK_DOWN);
+				Thread.sleep(200); // Add a small delay between key presses
+			}
+
+			// Press Enter to select the highlighted option
+			robot.keyPress(KeyEvent.VK_ENTER);
+			robot.keyRelease(KeyEvent.VK_ENTER);
+		} catch (Exception e) {
+			System.out.println("Error while selecting dropdown option: " + e.getMessage());
+		}
+	}
+
+	public void setFromAndToDateIfEnabled(WebElement dateFieldXPath, String fromDate, String toDate) {
+		try {
+			WebElement dateField = dateFieldXPath;
+			// Check if the field is enabled
+			if (dateField.isEnabled()) {
+				System.out.println("Date field is enabled.");
+
+				// Combine the From Date and To Date
+				String dateRange = fromDate + " - " + toDate;
+
+				// Use JavaScript Executor to set the value
+				JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+				jsExecutor.executeScript("arguments[0].value = arguments[1];", dateField, dateRange);
+				System.out.println("Date range set to: " + dateRange);
+			} else {
+				System.out.println("Date field is not enabled.");
+			}
+		} catch (Exception e) {
+			System.out.println("Error while interacting with the date field: " + e.getMessage());
+		}
 	}
 }

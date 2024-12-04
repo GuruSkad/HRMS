@@ -30,7 +30,7 @@ public class UserPage extends TestBase {
 	private WebElement uploadNewImage;
 
 	@FindBy(id = "employee_name")
-	public  WebElement firstName;
+	public WebElement firstName;
 
 	@FindBy(id = "last_name")
 	private WebElement lastName;
@@ -242,7 +242,8 @@ public class UserPage extends TestBase {
 			String woLocation, String vendor, String billType, String timeZone) {
 		try {
 			firstName.sendKeys(fName);
-		
+	
+
 			lastName.sendKeys(lName);
 			emoloyeeID.clear();
 			emoloyeeID.sendKeys(empID);
@@ -253,63 +254,41 @@ public class UserPage extends TestBase {
 			JavascriptExecutor j = (JavascriptExecutor) driver;
 			j.executeScript("arguments[0].setAttribute('value','" + doj + "');", dateOfJoining);
 
-//			  gend.click();
-
 			selectDropdownByValue(selectGender, gender);
 			Thread.sleep(3000);
-//			  Select s=new Select(gend);
-//			  s.selectByVisibleText(gender);
 			mobileNo.sendKeys(Mob);
 			officialEmail.sendKeys(omail);
 			personalEmail.sendKeys(pmail);
-//			  Select cry=new Select(country);
-//			  cry.selectByVisibleText(ctry);
+
 			selectDropdownByVisibleText(country, ctry);
-//			  Select st=new Select(state);
-//			  st.selectByVisibleText(stat);
+
 			selectDropdownByVisibleText(state, stat);
-//			Select cit = new Select(city);
-//			cit.selectByVisibleText(cty);
+
 			selectDropdownByVisibleText(city, cty);
 			pinCode.sendKeys(pcode);
 			permanentAdress.sendKeys(padd);
 			temporaryAddress.sendKeys(tadd);
 			jobTitle.sendKeys(jbtitle);
-			
-//			Select dpt = new Select(department);
-//			dpt.selectByVisibleText(dptmt);
+
 			selectDropdownByVisibleText(department, dptmt);
-//			
-//			Select sbdpt = new Select(sbDepartment);
-//			sbdpt.selectByVisibleText(subDept);
+
 			selectDropdownByVisibleText(sbDepartment, subDept);
-			
-//			Select emptpe = new Select(empType);
-//			emptpe.selectByVisibleText(emptype);
+
 			selectDropdownByVisibleText(empType, emptype);
 
-//			Select emthr = new Select(employedThrough);
-//			emthr.selectByVisibleText(empthrogh);
 			selectDropdownByVisibleText(employedThrough, empthrogh);
-			
-//			Select wmod = new Select(workMode);
-//			wmod.selectByVisibleText(woMode);
+
 			selectDropdownByVisibleText(workMode, woMode);
-			
+
 			selectDropdownByVisibleText(workolocation, woLocation);
-			
-//			Select vend = new Select(vendorName);
-//			vend.selectByVisibleText(vendor);
+
 			selectDropdownByVisibleText(vendorName, vendor);
-//			Select bill = new Select(billingType);
-//			bill.selectByVisibleText(billType);
+
 			selectDropdownByVisibleText(billingType, billType);
-//			Select tmz = new Select(userTimeZone);
-//			tmz.selectByVisibleText(timeZone);
+
 			selectDropdownByVisibleText(userTimeZone, timeZone);
 			Thread.sleep(4000);
-//			selectDropdownByVisibleText(role, rle);
-//			selectDropdownByVisibleText(reportingTo, reportTO);
+
 			submitButton.click();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -319,6 +298,9 @@ public class UserPage extends TestBase {
 
 	public void withoutValuesValidation() {
 		clickWithFluentWait(submitButton);
+	}
+	public void uploadFile() {
+		uploadNewImage.sendKeys("C:/Users/ArunKumar/Downloads/user.png");
 	}
 
 }

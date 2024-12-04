@@ -1,9 +1,16 @@
 package hrms.qa.testcases;
 
+import java.io.File;
+
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import hrms.qa.base.TestBase;
 import hrms.qa.pages.HomePage;
@@ -23,7 +30,19 @@ public class ProjectAdministrationTest extends TestBase {
 	public ProjectAdministrationTest() {
 		super();
 	}
+	@BeforeTest
+	public static void beforeTestMethod() {
 
+		sparkReporter = new ExtentSparkReporter(
+				System.getProperty("user.dir") + File.separator + "Reports" + File.separator + "HRMSExtentReport.html");
+		extent = new ExtentReports();
+		extent.attachReporter(sparkReporter);
+		sparkReporter.config().setTheme(Theme.DARK);
+		extent.setSystemInfo("HostName", "RHEL8");
+		extent.setSystemInfo("UserName", "root");
+		sparkReporter.config().setDocumentTitle("Automation Report");
+		sparkReporter.config().setReportName("Automation Test Results for HRMS");
+	}
 	@BeforeMethod
 	public void setup() {
 		try {

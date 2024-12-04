@@ -1,166 +1,121 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-20T15:56:54 IST" name="Suite" finished-at="2024-11-20T15:59:10 IST" duration-ms="136516">
+  <suite started-at="2024-12-04T15:49:38 IST" name="Default suite" finished-at="2024-12-04T15:50:47 IST" duration-ms="69471">
     <groups>
     </groups>
-    <test started-at="2024-11-20T15:56:54 IST" name="Test" finished-at="2024-11-20T15:59:10 IST" duration-ms="136516">
-      <class name="hrms.qa.testcases.UserTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.UserTest@1190200a]" started-at="2024-11-20T15:58:25 IST" name="setup" finished-at="2024-11-20T15:58:45 IST" duration-ms="20919" status="PASS">
+    <test started-at="2024-12-04T15:49:38 IST" name="Default test" finished-at="2024-12-04T15:50:47 IST" duration-ms="69471">
+      <class name="hrms.qa.testcases.TimeSheetsTest">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:49:38 IST" name="beforeTestMethod" finished-at="2024-12-04T15:49:38 IST" duration-ms="340" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="doLogi(java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:hrms.qa.testcases.UserTest@1190200a]" started-at="2024-11-20T15:58:45 IST" name="doLogi" data-provider="getADDUSERTestData" finished-at="2024-11-20T15:59:09 IST" duration-ms="23803" status="PASS">
+        </test-method> <!-- beforeTestMethod -->
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:49:38 IST" name="setup" finished-at="2024-12-04T15:49:57 IST" duration-ms="18806" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[Arun]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[Kumar]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[929839skad]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[22-10-1994]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[21-10-2024]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Male]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[4.362436436E9]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[AK@gmail.com]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[ka@gmial.com]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[India]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[Tamil Nadu]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Thanjavur]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[614625.0]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[xcxfgsggwegfresg]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[skdafjhbdsjdskahfliua]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[QA]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[Testing]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[QA]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[Contractor - hourly]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[Direct]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[Office]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[Delhi]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[Skad]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[Billing]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[Australia/South]]>
+                <![CDATA[public void hrms.qa.testcases.TimeSheetsTest.testTimeSheet()]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- doLogi -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.UserTest@1190200a]" started-at="2024-11-20T15:59:09 IST" name="tearDown" finished-at="2024-11-20T15:59:10 IST" duration-ms="932" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="testTimeSheet()[pri:1, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:49:57 IST" name="testTimeSheet" finished-at="2024-12-04T15:50:05 IST" duration-ms="7800" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testTimeSheet -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:50:05 IST" name="tearDown" finished-at="2024-12-04T15:50:05 IST" duration-ms="660" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=testTimeSheet status=SUCCESS method=TimeSheetsTest.testTimeSheet()[pri:1, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- hrms.qa.testcases.UserTest -->
-      <class name="hrms.qa.testcases.HomeTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:hrms.qa.testcases.HomeTest@1ff4931d]" started-at="2024-11-20T15:56:54 IST" name="setup" finished-at="2024-11-20T15:57:01 IST" duration-ms="7348" status="PASS">
+        <test-method is-config="true" signature="setup(java.lang.reflect.Method)[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:50:05 IST" name="setup" finished-at="2024-12-04T15:50:26 IST" duration-ms="20126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[public void hrms.qa.testcases.TimeSheetsTest.addTaskProject()]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testBrokenLinks()[pri:0, instance:hrms.qa.testcases.HomeTest@1ff4931d]" started-at="2024-11-20T15:57:01 IST" name="testBrokenLinks" finished-at="2024-11-20T15:58:23 IST" duration-ms="81391" status="PASS">
+        <test-method signature="addTaskProject()[pri:2, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:50:26 IST" name="addTaskProject" finished-at="2024-12-04T15:50:46 IST" duration-ms="20362" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[Cannot locate option with value: WSD
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: driver.version: unknown]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with value: WSD
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: driver.version: unknown
+at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:289)
+at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:194)
+at hrms.qa.base.TestBase.selectDropdownByValue(TestBase.java:189)
+at hrms.qa.pages.TimeSheetPage.addingTask(TimeSheetPage.java:74)
+at hrms.qa.testcases.TimeSheetsTest.addTaskProject(TimeSheetsTest.java:80)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testBrokenLinks -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:hrms.qa.testcases.HomeTest@1ff4931d]" started-at="2024-11-20T15:58:23 IST" name="tearDown" finished-at="2024-11-20T15:58:23 IST" duration-ms="741" status="PASS">
+        </test-method> <!-- addTaskProject -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:50:46 IST" name="tearDown" finished-at="2024-12-04T15:50:47 IST" duration-ms="804" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=addTaskProject status=FAILURE method=TimeSheetsTest.addTaskProject()[pri:2, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b] output={null}]]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- hrms.qa.testcases.HomeTest -->
-    </test> <!-- Test -->
-  </suite> <!-- Suite -->
+        <test-method is-config="true" signature="afterTest()[pri:0, instance:hrms.qa.testcases.TimeSheetsTest@3c3d9b6b]" started-at="2024-12-04T15:50:47 IST" name="afterTest" finished-at="2024-12-04T15:50:47 IST" duration-ms="506" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTest -->
+      </class> <!-- hrms.qa.testcases.TimeSheetsTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

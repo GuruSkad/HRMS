@@ -18,13 +18,11 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "(//span[normalize-space()='Dashboard'])[1]")
 	public WebElement dashBoardLink;
 	
-	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/timesheets']")
-	public WebElement timeSheetLink;
 	
 	@FindBy(xpath = "//span[normalize-space()='Project Administration']")
 	public WebElement projectAdministrationLink;
 	
-	@FindBy(xpath = "//span[normalize-space()='Task Oversight']" )
+	@FindBy(xpath = "(//a[@class='nav-link menu-link ']//span)[1]" )
 	public WebElement timeSheetPageLink;
 	
 	@FindBy(xpath    = "//span[normalize-space()='Task Oversight']")
@@ -36,7 +34,7 @@ public class HomePage extends TestBase {
 	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/client/list']")
 	public WebElement clientRelationsPageLink;
 	
-	@FindBy(xpath = "//a[@href='https://skad.timetracks.us/vendor/list' and contains(@class, 'menu-link')]")
+	@FindBy(xpath = "(//span[normalize-space()='Vendor Administration'])[1]")
 	public WebElement vendorAdministrationPageLink;
 
 	
@@ -55,7 +53,7 @@ public class HomePage extends TestBase {
 	@FindBy(linkText  = "User")
 	public WebElement addUserPageLink;
 	
-	@FindBy(id = "add_role")
+	@FindBy(linkText  = "Role")
 	public WebElement adddRolePageLink;
 	
     @FindBy(tagName = "a")
@@ -79,7 +77,9 @@ public class HomePage extends TestBase {
 	}
 	
 	public TimeSheetPage clickOnTimeSheetLink() {
-		timeSheetLink.click();
+//		waitForElementToBeVisible(timeSheetPageLink);
+//		timeSheetPageLink.click();
+		clickWithFluentWait(timeSheetPageLink);
 		return new TimeSheetPage();
 	}
 	
@@ -92,7 +92,7 @@ public class HomePage extends TestBase {
 	public TaskOverSightPage clickOnTaskOverSightPageLink() {
 		clickWithFluentWait(taskOverSightPageLink);
 	
-//		return new TaskOverSightPage();
+
 		return new TaskOverSightPage();
 	}
 
@@ -102,16 +102,16 @@ public class HomePage extends TestBase {
 	}
 	
 	public ClientRelationsPage clickOnClientRelationsLink() {
-//		waitForElementToBeClickable(clientRelationsPageLink);
-//		clientRelationsPageLink.click();
+
 		clickWithFluentWait(clientRelationsPageLink);
 		return new ClientRelationsPage();
 	}
 	
 	public VendorAdministrationPage clickOnVendorAdministrationLink() {
-//		waitForElementToBeClickable(vendorAdministrationPageLink);
-//		vendorAdministrationPageLink.click();
-		clickWithFluentWait(vendorAdministrationPageLink);
+
+	clickWithFluentWait(vendorAdministrationPageLink);
+	
+
 		return new VendorAdministrationPage();
 	}
 	

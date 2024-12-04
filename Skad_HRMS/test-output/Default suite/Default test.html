@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>1/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Wed Nov 20 15:35:29 IST 2024</td>
+<td>Started on:</td><td>Wed Dec 04 15:49:38 IST 2024</td>
 </tr>
-<tr><td>Total time:</td><td>16 seconds (16862 ms)</td>
+<tr><td>Total time:</td><td>69 seconds (69471 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,36 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='hrms.qa.testcases.VendorAdministrationTest.validation()'><b>validation</b><br>Test class: hrms.qa.testcases.VendorAdministrationTest<br>Parameters: Dolphin , 9.159268812E9, dolphin@gmail.com, India, Tamil Nadu, Thanjavur, 614625.0, 3 North street Orathanadu</td>
-<td><div><pre>org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {&quot;status&quot;:32,&quot;value&quot;:&quot;An invalid or illegal selector was specified&quot;}
-  (Session info: chrome=130.0.6723.119)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+<td title='hrms.qa.testcases.TimeSheetsTest.addTaskProject()'><b>addTaskProject</b><br>Test class: hrms.qa.testcases.TimeSheetsTest</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with value: WSD
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd6ce744298380ad81f24446d604dbd5, findElement {value=//a[@href=&apos;https://skad.timetracks.us/vendor/add&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.119, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\ARUNKU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59710}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59710/devtoo..., se:cdpVersion: 130.0.6723.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cd6ce744298380ad81f24446d604dbd5
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-	at hrms.qa.pages.VendorAdministrationPage.clickvendor(VendorAdministrationPage.java:48)
-	at hrms.qa.testcases.VendorAdministrationTest.validation(VendorAdministrationTest.java:61)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:289)
+	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:194)
+	at hrms.qa.base.TestBase.selectDropdownByValue(TestBase.java:189)
+	at hrms.qa.pages.TimeSheetPage.addingTask(TimeSheetPage.java:74)
+	at hrms.qa.testcases.TimeSheetsTest.addTaskProject(TimeSheetsTest.java:80)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -132,36 +113,17 @@ Session ID: cd6ce744298380ad81f24446d604dbd5
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div><a href='#' onClick='toggleBox("stack-trace341887005", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace341887005'><pre>org.openqa.selenium.InvalidSelectorException: invalid selector
-from javascript error: {&quot;status&quot;:32,&quot;value&quot;:&quot;An invalid or illegal selector was specified&quot;}
-  (Session info: chrome=130.0.6723.119)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#invalid-selector-exception
+</pre></div><a href='#' onClick='toggleBox("stack-trace727818265", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace727818265'><pre>org.openqa.selenium.NoSuchElementException: Cannot locate option with value: WSD
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.25.0&apos;, revision: &apos;8a8aea2337&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [cd6ce744298380ad81f24446d604dbd5, findElement {value=//a[@href=&apos;https://skad.timetracks.us/vendor/add&apos;], using=css selector}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 130.0.6723.119, chrome: {chromedriverVersion: 130.0.6723.116 (6ac35f94ae3..., userDataDir: C:\Users\ARUNKU~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59710}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59710/devtoo..., se:cdpVersion: 130.0.6723.119, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: cd6ce744298380ad81f24446d604dbd5
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-	at hrms.qa.pages.VendorAdministrationPage.clickvendor(VendorAdministrationPage.java:48)
-	at hrms.qa.testcases.VendorAdministrationTest.validation(VendorAdministrationTest.java:61)
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.Select.findOptionsByValue(Select.java:289)
+	at org.openqa.selenium.support.ui.Select.selectByValue(Select.java:194)
+	at hrms.qa.base.TestBase.selectDropdownByValue(TestBase.java:189)
+	at hrms.qa.pages.TimeSheetPage.addingTask(TimeSheetPage.java:74)
+	at hrms.qa.testcases.TimeSheetsTest.addTaskProject(TimeSheetsTest.java:80)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -189,8 +151,22 @@ Session ID: cd6ce744298380ad81f24446d604dbd5
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>0</td>
-<td>hrms.qa.testcases.VendorAdministrationTest@2925bf5b</td></tr>
+<td>20</td>
+<td>hrms.qa.testcases.TimeSheetsTest@3c3d9b6b</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='hrms.qa.testcases.TimeSheetsTest.testTimeSheet()'><b>testTimeSheet</b><br>Test class: hrms.qa.testcases.TimeSheetsTest</td>
+<td></td>
+<td>7</td>
+<td>hrms.qa.testcases.TimeSheetsTest@3c3d9b6b</td></tr>
 </table><p>
 </body>
 </html>

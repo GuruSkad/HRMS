@@ -34,26 +34,24 @@ public class VendorAdministrationPage extends TestBase {
 
 	@FindBy(id = "pin_code")
 	private WebElement pinCode;
-	
+
 	@FindBy(id = "address")
 	private WebElement pAddress;
-	
-
 
 	public VendorAdministrationPage() {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickvendor(String empName,String mob,String eml,
-			String contryId,String stateId,String ctyId,String pcode,String paddress) {
+	public void clickvendor(String empName, String mob, String eml, String contryId, String stateId, String ctyId,
+			String pcode, String paddress) {
 
 		addVendor.click();
 		employeeName.sendKeys(empName);
 		mobile.sendKeys(mob);
 		email.sendKeys(eml);
-		countryID.sendKeys(contryId);
-		stateID.sendKeys(stateId);
-		cityID.sendKeys(ctyId);
+		selectDropdownByVisibleText(countryID, contryId);
+		selectDropdownByVisibleText(stateID, stateId);
+		selectDropdownByVisibleText(cityID, ctyId);
 		pinCode.sendKeys(pcode);
 		pAddress.sendKeys(paddress);
 	}

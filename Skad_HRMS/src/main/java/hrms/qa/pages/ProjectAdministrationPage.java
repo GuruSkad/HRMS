@@ -86,7 +86,7 @@ public class ProjectAdministrationPage extends TestBase {
 	private WebElement completedProjects;
 
 	public ProjectAdministrationPage() {
-		this.driver = driver;
+		
 		PageFactory.initElements(driver, this);
 	}
 
